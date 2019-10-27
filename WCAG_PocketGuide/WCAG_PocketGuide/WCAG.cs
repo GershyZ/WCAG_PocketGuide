@@ -36,19 +36,20 @@ namespace WCAG_PocketGuide
             _guidelines.Add(new Guideline("1.4","Distinguishable"));
             _principles[0].Content_Start = 0;
             _principles[0].Content_Size = _guidelines.Count;
+            _guidelines.Add(new Guideline("2.1", "Keyboard Accessible"));
             _guidelines.Add(new Guideline("2.2", "Enough Time"));
             _guidelines.Add(new Guideline("2.3", "Seizures and Physical Reactions"));
             _guidelines.Add(new Guideline("2.4", "Navigable"));
             _guidelines.Add(new Guideline("2.5","Input Modalities"));
-            _principles[1].Content_Start = _principles[0].Content_Start +_principles[0].Content_Size+ 1;
+            _principles[1].Content_Start = _principles[0].Content_Start +_principles[0].Content_Size;
             _principles[1].Content_Size = _guidelines.Count - _principles[1].Content_Start;
             _guidelines.Add(new Guideline("3.1", "Readable"));
             _guidelines.Add(new Guideline("3.2", "Predictable"));
             _guidelines.Add(new Guideline("3.3", "Input Assistance"));
-            _principles[2].Content_Start = _principles[1].Content_Start + _principles[1].Content_Start + 1;
+            _principles[2].Content_Start = _principles[1].Content_Start + _principles[1].Content_Start;
             _principles[2].Content_Size = _guidelines.Count - _principles[2].Content_Start;
             _guidelines.Add(new Guideline("4.1", "Compatible"));
-            _principles[3].Content_Start = _principles[2].Content_Start + _principles[2].Content_Size + 1;
+            _principles[3].Content_Start = _principles[2].Content_Start + _principles[2].Content_Size;
             _principles[3].Content_Size = 1;
             _criterion = new List<Criteria>();
         }
