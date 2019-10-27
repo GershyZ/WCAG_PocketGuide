@@ -4,15 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WCAG_PocketGuide.Views.MainPage">
-    <ListView x:Name="PrinciplesListView"
-            ItemsSource="{Binding Principles}"
+             x:Class="WCAG_PocketGuide.Views.GuidelineContentPage">
+  <ListView x:Name="GuidelineListView"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
-        <!--Built in Cells-->
+    <!--Built in Cells-->
     <ListView.ItemTemplate>
         <DataTemplate>
-            <TextCell Text="{Binding Heading}" d:Text="MEEP" />
+            <TextCell Text="{Binding Heading}" d:Text="YeeeeeeeeHAw" />
         </DataTemplate>
     </ListView.ItemTemplate>
     

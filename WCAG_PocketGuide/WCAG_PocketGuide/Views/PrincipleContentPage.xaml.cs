@@ -12,15 +12,15 @@ namespace WCAG_PocketGuide.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PrincipleContentPage : ContentPage
     {
-        public ObservableCollection<Guideline> Guidelines { get; set; }
+        public ObservableCollection<Principle> wcag { get; set; }
 
-        public PrincipleContentPage(Principle principle)
+        public PrincipleContentPage()
         {
             InitializeComponent();
+            Title = "All Principles";
+            wcag = new ObservableCollection<Principle>(App.WCAG_Structure.Principles);
 
-            Guidelines = new ObservableCollection<Guideline>(principle.Guidelines);
-            
-            GuidelinesListView.ItemsSource = Guidelines;
+            PrinciplesListView.ItemsSource = wcag;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -28,10 +28,12 @@ namespace WCAG_PocketGuide.Views
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await DisplayAlert("Item Tapped",((Grouping)e.Item).Name + " was tapped.", "OK");
 
+            await Navigation.PushAsync(new GuidelineContentPage((Principle)e.Item));
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+            
         }
     }
 }

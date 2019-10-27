@@ -15,7 +15,7 @@ namespace WCAG_PocketGuide
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new PrincipleContentPage());
         }
 
         protected override void OnStart()

@@ -10,17 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace WCAG_PocketGuide.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class GuidelineContentPage : ContentPage
     {
-        public ObservableCollection<Principle> wcag { get; set; }
+        public ObservableCollection<Guideline> Guidelines { get; set; }
 
-        public MainPage()
+        public GuidelineContentPage(Principle principle)
         {
             InitializeComponent();
-
-            wcag = new ObservableCollection<Principle>(App.WCAG_Structure.Principles);
-
-            PrinciplesListView.ItemsSource = wcag;
+            Guidelines = new ObservableCollection<Guideline>(principle.Guidelines);
+            Title = principle.Heading;
+            GuidelineListView.ItemsSource = Guidelines;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -28,12 +27,10 @@ namespace WCAG_PocketGuide.Views
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped",((Grouping)e.Item).Name + " was tapped.", "OK");
-
-            await Navigation.PushAsync(new PrincipleContentPage((Principle)e.Item));
+            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await Navigation.PushAsync(new CriterionContentPage((Guideline)e.Item));
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
-            
         }
     }
 }
