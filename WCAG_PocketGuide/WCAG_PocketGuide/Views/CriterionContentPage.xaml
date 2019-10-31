@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:WCAG_PocketGuide.Views"
              x:Class="WCAG_PocketGuide.Views.CriterionContentPage">
+    <local:FiltersView/>
     <ListView x:Name="CriterionListView"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
@@ -14,8 +16,8 @@
             <TextCell Text="{Binding Heading}" d:Text="MOOSE" />
         </DataTemplate>
     </ListView.ItemTemplate>
-    
-    <!--Custom View Cells-->
+        
+        <!--Custom View Cells-->
     <!--
     <ListView.ItemTemplate>
       <DataTemplate>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WCAG_PocketGuide.Views.FiltersView">
+  <ContentView.Content>
+        <StackLayout>
+            
+        <Button x:Name="b_filter" Text="Filters" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Clicked="b_filter_Clicked" FontSize="Small"/>
+
+        <StackLayout Orientation="Vertical" x:Name="sl_filters" IsVisible="false">
+                <Label Text="Version"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="2.0"/>
+                    <Switch x:Name="sw_Version" IsToggled="False" Toggled="sw_Version_Toggled"/>
+                    <Label Text="2.1"/>
+                </StackLayout>
+                <Label Text="Strictness"/>
+                <Picker x:Name="p_Strict" SelectedIndexChanged="p_Strict_SelectedIndexChanged"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" x:Name="sl_Audience">
+                    <Label Text="Audience:"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

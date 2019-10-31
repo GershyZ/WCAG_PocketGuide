@@ -3,7 +3,7 @@ using System.Text;
 
 namespace WCAG_PocketGuide.Models
 {
-    public class Grouping
+    public class Grouping:PocketGuideItem
     {
         public string Id { get; set; }
         public string Name { get; set; }

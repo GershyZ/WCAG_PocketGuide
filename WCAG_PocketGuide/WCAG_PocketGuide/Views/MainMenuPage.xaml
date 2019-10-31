@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:WCAG_PocketGuide.Views"
+             x:Class="WCAG_PocketGuide.Views.MainMenuPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to WCAG Pocket Guide"
+                VerticalOptions="Start"                   
+                HorizontalOptions="CenterAndExpand" />
+            <local:FiltersView/>
+            <Button x:Name="b_getPrinciples" Text="View Principles" Clicked="b_getPrinciples_Clicked"/>
+            <Button x:Name="b_getCriterion" Text="View All Criterion" Clicked="b_getCriterion_Clicked"/>
+            <Button x:Name="b_playflashcards" Text="Review Flashcards" Clicked="b_playflashcards_Clicked"/>
+            <Button x:Name="b_export" Text="Import/Export User Content" Clicked="b_export_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WCAG_PocketGuide.Views.CriteriaDetailsPage">
+  <ContentPage.Content>
+      <StackLayout>
+          <Label Text="{Binding Heading}" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
+            <Label> Description Here</Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <Label Text="New Example"/>
+                <Entry Placeholder="Add example" x:Name="e_example"/>
+                <Button x:Name="b_AddExample" Clicked="b_AddExample_Clicked" Text="Submit example"/>
+            </StackLayout>
+            <ListView x:Name="lv_examples" ItemsSource = "{Binding Examples}"/>
+          
+
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

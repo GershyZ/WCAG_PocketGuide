@@ -11,16 +11,16 @@ namespace WCAG_PocketGuide.Models
 
         }
 
-        public Criteria[] Criterion
+        public List<Criteria> Criterion
         {
             get
             {
-                Criteria[] arr = new Criteria[Content_Size];
+                List<Criteria> criterion = new List<Criteria>();
                 for (int i = Content_Start; i < Content_Start + Content_Size; i++)
                 {
-                    arr[i - Content_Start] = App.WCAG_Structure.Criterion[i];
+                    criterion.Add(App.WCAG_Structure.Criterion[i]);
                 }
-                return arr;
+                return App.APPLYFILTERS(criterion);
             }
 
         }

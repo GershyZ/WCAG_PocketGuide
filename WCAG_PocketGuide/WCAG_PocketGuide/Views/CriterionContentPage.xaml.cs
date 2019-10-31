@@ -17,7 +17,7 @@ namespace WCAG_PocketGuide.Views
         {
             InitializeComponent();
             Title = "All Criterion";
-            Criterion = new ObservableCollection<Criteria>(App.WCAG_Structure.Criterion);
+            Criterion = new ObservableCollection<Criteria>(App.APPLYFILTERS(App.WCAG_Structure.Criterion));
             CriterionListView.ItemsSource = Criterion;
         }
         public CriterionContentPage(Guideline guideline)
@@ -33,9 +33,7 @@ namespace WCAG_PocketGuide.Views
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-            
-            //Deselect Item
+            await (Navigation.PushModalAsync(new CriteriaDetailsPage((Criteria)e.Item)));             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
     }

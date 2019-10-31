@@ -25,9 +25,7 @@ namespace WCAG_PocketGuide.Views
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
-                return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+                return;            
             await Navigation.PushAsync(new CriterionContentPage((Guideline)e.Item));
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
