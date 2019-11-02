@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System        ;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +33,8 @@ namespace WCAG_PocketGuide.Views
 
         private void p_Strict_SelectedIndexChanged(object sender, EventArgs e)
         {
-            App.STRICTNESS = (Filters.WCAGLevel)((Picker)sender).SelectedItem;
+         
+            App.STRICTNESS = (Filters.WCAGLevel)((Picker)sender).SelectedItem;            
         }
     }
 }

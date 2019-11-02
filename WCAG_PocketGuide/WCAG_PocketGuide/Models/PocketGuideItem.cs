@@ -4,11 +4,18 @@ using System.Text;
 
 namespace WCAG_PocketGuide.Models
 {
-    interface PocketGuideItem
+    public abstract class PocketGuideItem
     {
-        string Id { get; set; }
-        string Name { get; set; }
-        string Heading { get; }
-        string Description { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+
+        public string Heading { get { return Id + ": " + Name; } }
+        public string Description { get; set; }
+        public PocketGuideItem(string id, string name, string description)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+        }
     }
 }

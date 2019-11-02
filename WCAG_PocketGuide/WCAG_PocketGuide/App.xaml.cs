@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WCAG_PocketGuide.Views;
@@ -34,14 +35,14 @@ namespace WCAG_PocketGuide
 
         internal static List<Criteria> APPLYFILTERS(List<Criteria> criterion)
         {
-            /*foreach (Criteria c in criterion){
-                if (double.Parse(c.Version) > double.Parse(App.VERSION) || c.Level <= App.STRICTNESS)
-                {
-                    criterion.Remove(c);
+            List<Criteria> filtered = new List<Criteria>();
+            
+            foreach (Criteria c in criterion){
+                if (double.Parse(c.Version) <= double.Parse(App.VERSION) && c.Level <= App.STRICTNESS && c.Level!=Filters.WCAGLevel.A)                {
+                    filtered.Add(c);
                 }                
-            }
-            */
-            return criterion;
+            }            
+            return filtered;
         }
 
         protected override void OnResume()

@@ -6,6 +6,9 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:WCAG_PocketGuide.Views"
              x:Class="WCAG_PocketGuide.Views.CriterionContentPage">
+
+    <StackLayout>
+        
     <local:FiltersView/>
     <ListView x:Name="CriterionListView"
             ItemTapped="Handle_ItemTapped"
@@ -35,4 +38,5 @@
     </ListView.ItemTemplate>
     -->
   </ListView>
+  </StackLayout>
 </ContentPage>

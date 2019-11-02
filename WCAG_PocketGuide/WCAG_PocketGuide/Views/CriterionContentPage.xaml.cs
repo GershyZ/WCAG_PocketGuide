@@ -27,7 +27,7 @@ namespace WCAG_PocketGuide.Views
             Criterion = new ObservableCollection<Criteria>(guideline.Criterion);
             CriterionListView.ItemsSource = Criterion;
         }
-
+            
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
