@@ -20,7 +20,7 @@ namespace WCAG_PocketGuide.Models
                 {
                     criterion.Add(App.WCAG_Structure.Criterion[i]);
                 }
-                return App.APPLYFILTERS(criterion);
+                return criterion;
             }
 
         }

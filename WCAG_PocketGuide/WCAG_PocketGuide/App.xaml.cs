@@ -18,8 +18,7 @@ namespace WCAG_PocketGuide
 
         public App()
         {
-            InitializeComponent();
-
+            InitializeComponent();         
             MainPage = new NavigationPage(new MainMenuPage());
         }
 
@@ -33,17 +32,7 @@ namespace WCAG_PocketGuide
             // Handle when your app sleeps
         }
 
-        internal static List<Criteria> APPLYFILTERS(List<Criteria> criterion)
-        {
-            List<Criteria> filtered = new List<Criteria>();
             
-            foreach (Criteria c in criterion){
-                if (double.Parse(c.Version) <= double.Parse(App.VERSION) && c.Level <= App.STRICTNESS && c.Level!=Filters.WCAGLevel.A)                {
-                    filtered.Add(c);
-                }                
-            }            
-            return filtered;
-        }
 
         protected override void OnResume()
         {

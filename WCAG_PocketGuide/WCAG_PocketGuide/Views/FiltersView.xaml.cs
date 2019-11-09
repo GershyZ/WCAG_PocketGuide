@@ -15,7 +15,10 @@ namespace WCAG_PocketGuide.Views
         public FiltersView()
         {
             InitializeComponent();
-            p_Strict.ItemsSource = new List<Filters.WCAGLevel>{ Filters.WCAGLevel.A, Filters.WCAGLevel.AA, Filters.WCAGLevel.AAA };          
+            p_Strict.ItemsSource = new List<Filters.WCAGLevel>{ Filters.WCAGLevel.A, Filters.WCAGLevel.AA, Filters.WCAGLevel.AAA };
+            p_Strict.SelectedItem = App.STRICTNESS;
+            if (App.VERSION.Equals("2.1"))
+                sw_Version.IsToggled = true;
         }
         private void sw_Version_Toggled(object sender, ToggledEventArgs e)
         {
@@ -24,7 +27,7 @@ namespace WCAG_PocketGuide.Views
             {
                 App.VERSION = "2.1";
             }
-        }
+        } 
 
         private void b_filter_Clicked(object sender, EventArgs e)
         {
@@ -32,8 +35,7 @@ namespace WCAG_PocketGuide.Views
         }
 
         private void p_Strict_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
+        {         
             App.STRICTNESS = (Filters.WCAGLevel)((Picker)sender).SelectedItem;            
         }
     }

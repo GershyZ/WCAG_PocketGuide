@@ -24,7 +24,7 @@ namespace WCAG_PocketGuide.Views
 
         private void b_AddExample_Clicked(object sender, EventArgs e)
         {
-            _criteria.Examples.Add(e_example.Text);
+            _criteria.addExample(e_example.Text);
             e_example.Text = "";
         }
     }
